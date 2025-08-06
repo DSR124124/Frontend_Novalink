@@ -1,0 +1,36 @@
+.sidebar-hidden {
+  width: 0;
+  opacity: 0;
+  border-right: none;
+}
+
+.main-content {
+  padding: 1rem;
+  overflow: auto;
+  background-color: #f2f4f8;
+  background-color: transparent;
+}
+
+.separator {
+  display: block;
+  width: 1px;
+  border: 1px solid #e3e8f0;
+  align-self: stretch;
+  margin: 0 1rem;
+}
+
+.titulo {
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.barra-superior {
+  height: 50px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.boton-sidebar {
+  margin-left: -20px;
+}

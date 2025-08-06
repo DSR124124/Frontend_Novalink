@@ -1,0 +1,150 @@
+<div class="login-container">
+  <!-- Botón pantalla completa -->
+  <div class="fullscreen-button">
+    <p-button
+      icon="pi pi-expand"
+      [label]="buttonLabel"
+      (click)="toggleFullscreen()"
+      severity="secondary"
+      [outlined]="true"
+    ></p-button>
+  </div>
+
+  <div class="login-content">
+    <div class="login-card">
+      <!-- Header con logo y branding -->
+      <div class="login-header">
+        <div class="brand-container">
+          <i class="pi pi-heart-fill heart-icon"></i>
+          <h1 class="brand-name">NOVALINK</h1>
+          <p class="brand-tagline">Conectando corazones</p>
+        </div>
+      </div>
+
+      <!-- Sección de ilustración -->
+      <div class="illustration-section">
+        <div class="couple-illustration">
+          <i class="pi pi-users couple-icon"></i>
+          <h2>Encuentra tu pareja perfecta</h2>
+          <p>Una plataforma diseñada para crear conexiones auténticas y duraderas</p>
+
+          <div class="features-list">
+            <div class="feature-item">
+              <i class="pi pi-check-circle"></i>
+              <span>Perfiles verificados</span>
+            </div>
+            <div class="feature-item">
+              <i class="pi pi-shield"></i>
+              <span>Privacidad garantizada</span>
+            </div>
+            <div class="feature-item">
+              <i class="pi pi-heart"></i>
+              <span>Compatibilidad inteligente</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario de login -->
+      <div class="login-form-section">
+        <div class="form-header">
+          <h2>Iniciar Sesión</h2>
+          <p>Accede a tu cuenta para comenzar a conectar</p>
+        </div>
+
+        <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="login-form">
+          <!-- Campo usuario -->
+          <div class="field-container">
+            <p-floatlabel>
+              <input
+                pInputText
+                id="username"
+                name="username"
+                [(ngModel)]="username"
+                required
+                class="w-full"
+                [class.p-invalid]="hayError"
+              />
+              <label for="username">
+                <i class="pi pi-user"></i>
+                Email o Usuario
+              </label>
+            </p-floatlabel>
+          </div>
+
+          <!-- Campo contraseña -->
+          <div class="field-container">
+            <p-floatlabel>
+              <p-password
+                id="password"
+                name="password"
+                [(ngModel)]="password"
+                [toggleMask]="true"
+                [feedback]="false"
+                styleClass="w-full"
+                inputStyleClass="w-full"
+                [class.p-invalid]="hayError"
+                required
+              />
+              <label for="password">
+                <i class="pi pi-lock"></i>
+                Contraseña
+              </label>
+            </p-floatlabel>
+          </div>
+
+          <!-- Opciones adicionales -->
+          <div class="form-options">
+            <div class="remember-me">
+              <p-checkbox
+                name="remember"
+                value="remember"
+                [(ngModel)]="rememberMe"
+                inputId="remember"
+              />
+              <label for="remember">Recordarme</label>
+            </div>
+            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <!-- Botón de login -->
+          <p-button
+            label="Iniciar Sesión"
+            type="submit"
+            class="w-full login-button"
+            size="large"
+            [loading]="loading"
+            loadingIcon="pi pi-spinner"
+          />
+
+          <!-- Divider -->
+          <p-divider align="center">
+            <span class="divider-text">o</span>
+          </p-divider>
+
+          <!-- Registro -->
+          <div class="register-section">
+            <p>¿No tienes cuenta?</p>
+            <p-button
+              label="Crear Cuenta"
+              [outlined]="true"
+              class="w-full"
+              (click)="goToRegister()"
+              severity="secondary"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="login-footer">
+      <p>&copy; 2024 NOVALINK - Conectando corazones, creando historias</p>
+      <div class="footer-links">
+        <a href="#">Términos</a>
+        <a href="#">Privacidad</a>
+        <a href="#">Ayuda</a>
+      </div>
+    </div>
+  </div>
+</div>

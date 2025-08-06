@@ -1,0 +1,14 @@
+<div class="w-100 d-flex align-items-center justify-content-between px-2">
+  <div class="header-title">
+    <span>{{ currentLabel }}</span>
+  </div>
+  <div class="perfil">
+    <p-button (click)="menu.toggle($event)">
+      <div class="d-flex flex-column align-items-end">
+        <span>nombre</span>
+      </div>
+      <p-avatar class="mr-2" size="large" shape="circle" />
+    </p-button>
+    <p-menu #menu [model]="items" [popup]="true" appendTo="body" />
+  </div>
+</div>
