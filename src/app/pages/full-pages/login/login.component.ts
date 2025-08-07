@@ -13,18 +13,18 @@ export class LoginComponent{
 
   data: TreeNode[] = [
     {
-        label: 'Argentina',
+        label: 'Perú',
         expanded: true,
-        data: 'ar',
+        data: 'pe',
         children: [
             {
-                label: 'Argentina',
+                label: 'Lima',
                 expanded: true,
-                data: 'ar',
+                data: 'lima',
                 children: [
                     {
-                        label: 'Argentina',
-                        data: 'ar'
+                        label: 'Lima',
+                        data: 'lima'
                     },
                     {
                         label: 'Croatia',
