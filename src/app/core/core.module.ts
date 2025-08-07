@@ -7,6 +7,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { SharedModule } from 'primeng/api';
+import { SidebarItemComponent } from './components/sidebar-item/sidebar-item.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { SharedModule } from 'primeng/api';
     SidebarComponent,
     FooterComponent,
     LayoutComponent,
+    SidebarItemComponent,
   ],
   imports: [
     CommonModule,

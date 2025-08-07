@@ -22,8 +22,11 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  verificarSesion(codisist: number, ipOrigen: string, agenteUsuario: string): Observable<any> {
-    const payload = { codisist, ipOrigen, agenteUsuario };
+  verificarSesion(): Observable<any> {
+    const payload = {
+      codisist: global.sistema,
+    };
+
 
     return this.http.post<any>(`${this.url}api/verificar-sesion`, payload, {
       withCredentials: true

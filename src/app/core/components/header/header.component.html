@@ -1,14 +1,29 @@
-<div class="w-100 d-flex align-items-center justify-content-between px-2">
-  <div class="header-title">
-    <span>{{ currentLabel }}</span>
+<div class="header-container d-flex align-items-center justify-content-between">
+  <div class="header-title text-truncate" [title]="breadcrumbFull">
+    <!-- Mostrar solo el breadcrumb corto en pantallas pequeñas -->
+    <span
+      pTooltip="{{ breadcrumbFull }}"
+      tooltipPosition="right"
+      class="d-sm-none"
+      >{{ breadcrumbDisplay }}</span
+    >
+
+    <!-- Mostrar breadcrumb completo en pantallas sm en adelante -->
+    <span
+      pTooltip="{{ breadcrumbFull }}"
+      tooltipPosition="right"
+      class="d-none d-sm-inline text-truncate"
+      >{{ breadcrumbFull }}</span
+    >
   </div>
+
   <div class="perfil">
-    <p-button (click)="menu.toggle($event)">
-      <div class="d-flex flex-column align-items-end">
-        <span>nombre</span>
-      </div>
-      <p-avatar class="mr-2" size="large" shape="circle" />
-    </p-button>
+    <p-avatar
+      (click)="menu.toggle($event)"
+      size="large"
+      shape="circle"
+      class="imagen"
+    />
     <p-menu #menu [model]="items" [popup]="true" appendTo="body" />
   </div>
 </div>

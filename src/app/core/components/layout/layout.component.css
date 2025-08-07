@@ -1,3 +1,16 @@
+.main-layout {
+  background-color: #f2f4f8;
+  background-color: transparent;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: transparent;
+  transition: width 0.5s ease, opacity 0.5s ease;
+  overflow: hidden;
+  /* border-right: 0.5px solid #f0f9f2; */
+}
+
 .sidebar-hidden {
   width: 0;
   opacity: 0;
@@ -7,7 +20,6 @@
 .main-content {
   padding: 1rem;
   overflow: auto;
-  background-color: #f2f4f8;
   background-color: transparent;
 }
 
@@ -16,21 +28,13 @@
   width: 1px;
   border: 1px solid #e3e8f0;
   align-self: stretch;
-  margin: 0 1rem;
-}
-
-.titulo {
-  color: #000;
-  font-size: 1.5rem;
-  font-weight: 700;
+  margin: 0 0.5rem;
 }
 
 .barra-superior {
-  height: 50px;
-  background-color: #ffffff;
   border-bottom: 1px solid #e5e7eb;
 }
 
-.boton-sidebar {
-  margin-left: -20px;
+.boton-toggle-sidebar {
+  padding-left: 0.5rem;
 }

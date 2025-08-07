@@ -1,37 +1,31 @@
 <div
-  class="sidebar d-flex flex-column h-100"
+  class="sidebar d-flex flex-column h-100 w-100"
   [ngClass]="{ 'sidebar-mini': !open }"
 >
   <div class="titulo-wrapper" [ngClass]="{ 'titulo-wrapper-colapsado': !open }">
-    <span class="titulo">Programación Bordados</span>
+    <span class="titulo">{{ titulo }}</span>
   </div>
 
-  <p-button
-    [text]="true"
-    size="large"
-    severity="contrast"
-    class="w-100 row p-0 m-0"
-    *ngFor="let item of items"
-    [routerLink]="item.ruta ? item.ruta : null"
-    routerLinkActive="active-button"
-  >
-    <div class="row align-items-center justify-content-start w-100">
-      <div
-        class="p-0 d-flex justify-content-start"
-        style="height: 2rem"
-        [ngClass]="{ 'col-2': open, 'col-12': !open }"
+  <!-- Menú principal -->
+  <ul class="menu">
+    <li
+      *ngFor="let item of menuItems; let i = index"
+      class="elemento menu-item"
+      [ngClass]="{ 'item-activo': currentExpandedItemIndex[0] === i }"
+    >
+      <!-- Llamamos al componente recursivo -->
+      <app-sidebar-item
+        [item]="item"
+        [depth]="0"
+        [index]="i"
+        [expanded]="currentExpandedItemIndex[0] === i"
+        [currentExpandedItemIndex]="currentExpandedItemIndex"
+        [sidebarCollapsed]="!open"
+        (expandChange)="handleExpandChange($event)"
       >
-        <ng-container
-          *ngTemplateOutlet="iconTemplates[item.iconRef]"
-        ></ng-container>
-      </div>
-      <span
-        class="text-start"
-        [ngClass]="{ 'texto-none': !open, 'col-10': open }"
-        >{{ item.nombre }}</span
-      >
-    </div>
-  </p-button>
+      </app-sidebar-item>
+    </li>
+  </ul>
 </div>
 
 <ng-template #iconInicio>

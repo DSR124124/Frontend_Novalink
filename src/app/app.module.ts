@@ -11,7 +11,6 @@ import { PrimeNgModule } from './prime-ng/prime-ng.module';
 import { providePrimeNG } from 'primeng/config';
 import { provideHttpClient } from '@angular/common/http';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { SharedModule } from './shared/shared.module';
 import { DialogService } from 'primeng/dynamicdialog';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CoreModule } from './core/core.module';
@@ -26,7 +25,6 @@ import { CoreModule } from './core/core.module';
     AppRoutingModule,
     PrimeNgModule,
     CoreModule,
-    SharedModule
   ],
   providers: [
     provideAnimationsAsync(),
